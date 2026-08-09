@@ -1,0 +1,196 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, #300008 0%, #120005 35%, #050505 75%);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 650px;
+    text-align: center;
+    padding: 45px 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.heart {
+    font-size: 55px;
+    margin-bottom: 20px;
+    animation: heartbeat 1.5s infinite;
+    filter: drop-shadow(0 0 18px #ff003c);
+}
+
+.small-text {
+    color: #ff6b85;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(42px, 9vw, 72px);
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 0 0 25px rgba(255, 0, 60, 0.5);
+}
+
+.message {
+    color: #d8d8d8;
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 500px;
+    margin: auto;
+}
+
+.line {
+    width: 80px;
+    height: 2px;
+    background: #ff1744;
+    margin: 30px auto;
+    box-shadow: 0 0 12px #ff1744;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: normal;
+    color: #eeeeee;
+    margin-bottom: 20px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.countdown div {
+    min-width: 90px;
+    padding: 15px 10px;
+    border: 1px solid rgba(255, 23, 68, 0.45);
+    background: rgba(255, 0, 40, 0.06);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 0, 40, 0.08);
+}
+
+.countdown span {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff3157;
+}
+
+.countdown small {
+    color: #aaa;
+    font-size: 12px;
+}
+
+.wait {
+    margin-top: 28px;
+    color: #999;
+    font-size: 14px;
+}
+
+.lock {
+    margin-top: 25px;
+    font-size: 25px;
+    opacity: 0.8;
+}
+
+/* Corações */
+
+.hearts::before,
+.hearts::after {
+    content: "♥  ♥  ♥  ♥  ♥  ♥  ♥  ♥";
+    position: absolute;
+    color: rgba(255, 0, 50, 0.12);
+    font-size: 25px;
+    letter-spacing: 45px;
+    animation: float 12s linear infinite;
+}
+
+.hearts::before {
+    top: 100%;
+    left: 5%;
+}
+
+.hearts::after {
+    top: 100%;
+    left: 50%;
+    animation-delay: 5s;
+}
+
+/* Animações */
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.15);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-120vh) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .container {
+        padding: 30px 15px;
+    }
+
+    .countdown {
+        gap: 7px;
+    }
+
+    .countdown div {
+        min-width: 72px;
+        padding: 12px 6px;
+    }
+
+    .countdown span {
+        font-size: 24px;
+    }
+
+    .countdown small {
+        font-size: 10px;
+    }
+
+    .message {
+        font-size: 15px;
+    }
+}
+```
