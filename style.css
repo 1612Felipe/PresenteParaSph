@@ -8,135 +8,371 @@
 body {
     min-height: 100vh;
     background:
-        radial-gradient(circle at top, #300008 0%, #120005 35%, #050505 75%);
+        radial-gradient(
+            circle at 50% 0%,
+            #3d000b 0%,
+            #170006 35%,
+            #050505 75%
+        );
+
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     overflow: hidden;
 }
 
 .container {
     width: 90%;
-    max-width: 650px;
+    max-width: 700px;
+
     text-align: center;
-    padding: 45px 25px;
+
+    padding: 40px 25px;
+
     position: relative;
-    z-index: 2;
+    z-index: 5;
+
+    animation: appear 1.2s ease;
 }
 
 .heart {
-    font-size: 55px;
+    font-size: 60px;
+
     margin-bottom: 20px;
+
     animation: heartbeat 1.5s infinite;
-    filter: drop-shadow(0 0 18px #ff003c);
+
+    filter:
+        drop-shadow(0 0 10px #ff003c)
+        drop-shadow(0 0 25px #ff003c);
 }
 
 .small-text {
-    color: #ff6b85;
-    font-size: 14px;
-    letter-spacing: 3px;
+    color: #ff718b;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
     text-transform: uppercase;
+
     margin-bottom: 15px;
 }
 
 h1 {
-    font-size: clamp(42px, 9vw, 72px);
+    font-size: clamp(42px, 9vw, 75px);
+
     margin-bottom: 20px;
+
     color: white;
-    text-shadow: 0 0 25px rgba(255, 0, 60, 0.5);
+
+    text-shadow:
+        0 0 10px rgba(255, 0, 60, 0.5),
+        0 0 30px rgba(255, 0, 60, 0.3);
 }
 
 .message {
-    color: #d8d8d8;
-    font-size: 17px;
-    line-height: 1.7;
-    max-width: 500px;
+    max-width: 520px;
+
     margin: auto;
+
+    color: #d5d5d5;
+
+    font-size: 17px;
+
+    line-height: 1.7;
 }
 
 .line {
-    width: 80px;
+    width: 90px;
     height: 2px;
+
     background: #ff1744;
+
     margin: 30px auto;
-    box-shadow: 0 0 12px #ff1744;
+
+    box-shadow: 0 0 15px #ff1744;
 }
 
 h2 {
     font-size: 18px;
+
     font-weight: normal;
+
     color: #eeeeee;
+
     margin-bottom: 20px;
 }
 
 .countdown {
     display: flex;
+
     justify-content: center;
+
     gap: 12px;
+
     flex-wrap: wrap;
 }
 
 .countdown div {
     min-width: 90px;
-    padding: 15px 10px;
+
+    padding: 16px 10px;
+
+    border-radius: 14px;
+
     border: 1px solid rgba(255, 23, 68, 0.45);
+
     background: rgba(255, 0, 40, 0.06);
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(255, 0, 40, 0.08);
+
+    box-shadow:
+        0 0 20px rgba(255, 0, 40, 0.08),
+        inset 0 0 20px rgba(255, 0, 40, 0.03);
+
+    backdrop-filter: blur(5px);
 }
 
 .countdown span {
     display: block;
+
     font-size: 30px;
+
     font-weight: bold;
+
     color: #ff3157;
+
+    text-shadow: 0 0 12px rgba(255, 0, 60, 0.5);
 }
 
 .countdown small {
-    color: #aaa;
+    color: #999;
+
     font-size: 12px;
 }
 
 .wait {
     margin-top: 28px;
+
     color: #999;
+
     font-size: 14px;
 }
 
 .lock {
     margin-top: 25px;
-    font-size: 25px;
+
+    font-size: 27px;
+
     opacity: 0.8;
+
+    animation: lockPulse 2s infinite;
 }
 
-/* Corações */
+/* CORAÇÕES */
 
 .hearts::before,
 .hearts::after {
-    content: "♥  ♥  ♥  ♥  ♥  ♥  ♥  ♥";
+    content: "♥   ♥   ♥   ♥   ♥   ♥";
+
     position: absolute;
+
     color: rgba(255, 0, 50, 0.12);
+
     font-size: 25px;
-    letter-spacing: 45px;
-    animation: float 12s linear infinite;
+
+    letter-spacing: 35px;
+
+    white-space: nowrap;
+
+    animation: floatingHearts 14s linear infinite;
+
+    z-index: 1;
 }
 
 .hearts::before {
+    left: 0;
     top: 100%;
-    left: 5%;
 }
 
 .hearts::after {
+    left: 45%;
     top: 100%;
-    left: 50%;
-    animation-delay: 5s;
+
+    animation-delay: 6s;
 }
 
-/* Animações */
+
+/* ========================= */
+/* TELA DESBLOQUEADA */
+/* ========================= */
+
+.birthday-mode {
+    background:
+        radial-gradient(
+            circle at center,
+            #45000d 0%,
+            #170006 40%,
+            #050505 80%
+        );
+}
+
+.unlocked {
+    width: 90%;
+
+    max-width: 700px;
+
+    text-align: center;
+
+    animation: appear 1.5s ease;
+}
+
+.big-heart {
+    font-size: 75px;
+
+    animation: heartbeat 1.4s infinite;
+
+    filter:
+        drop-shadow(0 0 15px #ff003c)
+        drop-shadow(0 0 35px #ff003c);
+}
+
+.birthday-small {
+    margin-top: 20px;
+
+    color: #ff6680;
+
+    letter-spacing: 5px;
+
+    font-size: 13px;
+}
+
+.unlocked h1 {
+    margin-top: 15px;
+
+    font-size: clamp(40px, 8vw, 70px);
+}
+
+.birthday-message {
+    max-width: 500px;
+
+    margin: 20px auto;
+
+    color: #ddd;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+.unlocked button,
+.story button {
+    margin-top: 25px;
+
+    padding: 14px 28px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #ff1744;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(255, 0, 60, 0.5);
+
+    transition: 0.3s;
+}
+
+.unlocked button:hover,
+.story button:hover {
+    transform: scale(1.06);
+
+    box-shadow:
+        0 0 30px rgba(255, 0, 60, 0.8);
+}
+
+
+/* ========================= */
+/* HISTÓRIA */
+/* ========================= */
+
+.story {
+    width: 90%;
+
+    max-width: 700px;
+
+    text-align: center;
+
+    animation: appear 1s ease;
+}
+
+.story-heart {
+    font-size: 65px;
+
+    margin-bottom: 20px;
+
+    filter:
+        drop-shadow(0 0 15px rgba(255, 0, 60, 0.7));
+}
+
+.story-label {
+    color: #ff5270;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+.story h1 {
+    font-size: clamp(35px, 7vw, 60px);
+
+    margin-bottom: 25px;
+}
+
+.story p {
+    color: #d5d5d5;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    max-width: 570px;
+
+    margin: auto;
+}
+
+.story h2 {
+    margin-top: 30px;
+
+    color: #ff5270;
+}
+
+.final-line {
+    margin-top: 25px !important;
+
+    color: #ff3157 !important;
+
+    font-size: 21px !important;
+
+    font-weight: bold;
+}
+
+
+/* ANIMAÇÕES */
 
 @keyframes heartbeat {
+
     0%, 100% {
         transform: scale(1);
     }
@@ -150,26 +386,64 @@ h2 {
     }
 }
 
-@keyframes float {
+@keyframes lockPulse {
+
+    0%, 100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes floatingHearts {
+
     0% {
         transform: translateY(0) rotate(0deg);
+
         opacity: 0;
     }
 
-    20% {
+    15% {
         opacity: 1;
     }
 
     100% {
-        transform: translateY(-120vh) rotate(20deg);
+        transform:
+            translateY(-120vh)
+            rotate(15deg);
+
         opacity: 0;
     }
 }
 
+@keyframes appear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* CELULAR */
+
 @media (max-width: 500px) {
 
     .container {
-        padding: 30px 15px;
+        padding: 25px 10px;
     }
 
     .countdown {
@@ -178,6 +452,7 @@ h2 {
 
     .countdown div {
         min-width: 72px;
+
         padding: 12px 6px;
     }
 
