@@ -1,34 +1,20 @@
-```javascript
-// ============================================
 // TESTE
-// LIBERA HOJE: 08/08/2026 ÀS 21:40
-// HORÁRIO DE BRASÍLIA (UTC-3)
-// ============================================
+// 10/08/2026 às 21:40
+// Horário de Brasília
 
 const targetDate = new Date(
-    "2026-08-08T21:40:00-03:00"
+    "2026-08-10T21:40:00-03:00"
 ).getTime();
-
-
-// ============================================
-// CONTADOR
-// ============================================
 
 function updateCountdown() {
 
-    const now = new Date().getTime();
-
+    const now = Date.now();
     const difference = targetDate - now;
 
-
-    // Chegou a hora
     if (difference <= 0) {
-
         unlockSite();
-
         return;
     }
-
 
     const days = Math.floor(
         difference / (1000 * 60 * 60 * 24)
@@ -46,7 +32,6 @@ function updateCountdown() {
         (difference / 1000) % 60
     );
 
-
     document.getElementById("days").textContent =
         String(days).padStart(2, "0");
 
@@ -60,65 +45,42 @@ function updateCountdown() {
         String(seconds).padStart(2, "0");
 }
 
-
-// ============================================
-// DESBLOQUEIO
-// ============================================
-
 function unlockSite() {
 
     document.body.innerHTML = `
+        <main class="container">
 
-        <div class="unlocked">
+            <div class="heart">❤️</div>
 
-            <div class="big-heart">
-                ❤️
-            </div>
-
-            <p class="birthday-small">
+            <p class="small-text">
                 AGORA VOCÊ PODE ABRIR
             </p>
 
             <h1>
-                Oi, Sophia! ❤️
+                Oi, Sophia ❤️
             </h1>
 
-            <p class="birthday-message">
-
+            <p class="message">
                 Finalmente chegou a hora.
-
-                Eu preparei tudo isso pensando
-                em você.
-
+                Eu preparei tudo isso pensando em você.
             </p>
 
             <button onclick="openStory()">
                 Abrir minha surpresa ❤️
             </button>
 
-        </div>
-
+        </main>
     `;
-
-    document.body.classList.add("birthday-mode");
 }
-
-
-// ============================================
-// HISTÓRIA
-// ============================================
 
 function openStory() {
 
     document.body.innerHTML = `
+        <main class="container">
 
-        <div class="story">
+            <div class="heart">💖</div>
 
-            <div class="story-heart">
-                ❤️
-            </div>
-
-            <p class="story-label">
+            <p class="small-text">
                 NOSSA HISTÓRIA
             </p>
 
@@ -126,39 +88,28 @@ function openStory() {
                 Tudo começou há muito tempo...
             </h1>
 
-            <p>
-
+            <p class="message">
                 Antes de tudo isso existir,
                 antes mesmo de imaginarmos onde
                 a vida iria nos levar...
-
             </p>
 
             <button onclick="nextPart()">
                 Continuar ❤️
             </button>
 
-        </div>
-
+        </main>
     `;
 }
-
-
-// ============================================
-// CRECHE
-// ============================================
 
 function nextPart() {
 
     document.body.innerHTML = `
+        <main class="container">
 
-        <div class="story">
+            <div class="heart">🌱</div>
 
-            <div class="story-heart">
-                🌱
-            </div>
-
-            <p class="story-label">
+            <p class="small-text">
                 PARTE 1
             </p>
 
@@ -166,44 +117,29 @@ function nextPart() {
                 A creche
             </h1>
 
-            <p>
-
+            <p class="message">
                 Foi lá que a gente se conheceu.
-
                 Duas crianças que nem imaginavam
-                que, muitos anos depois, ainda
+                que muitos anos depois ainda
                 teriam uma história para contar.
-
-                E naquela época a gente já namorava,
-                mesmo sendo tão pequenos.
-
             </p>
 
             <button onclick="nextPartTwo()">
                 Continuar ❤️
             </button>
 
-        </div>
-
+        </main>
     `;
 }
-
-
-// ============================================
-// PRIMEIRO ANO
-// ============================================
 
 function nextPartTwo() {
 
     document.body.innerHTML = `
+        <main class="container">
 
-        <div class="story">
+            <div class="heart">⏳</div>
 
-            <div class="story-heart">
-                ⏳
-            </div>
-
-            <p class="story-label">
+            <p class="small-text">
                 PARTE 2
             </p>
 
@@ -211,87 +147,57 @@ function nextPartTwo() {
                 O tempo passou
             </h1>
 
-            <p>
-
+            <p class="message">
                 No primeiro ano eu mudei de escola.
-
-                A partir dali, nossos caminhos
-                acabaram se separando.
-
-                Os anos passaram e parecia que
-                aquela história tinha ficado para trás.
-
+                Nossos caminhos se separaram e
+                os anos passaram.
             </p>
 
             <button onclick="nextPartThree()">
                 Continuar ❤️
             </button>
 
-        </div>
-
+        </main>
     `;
 }
-
-
-// ============================================
-// INSTAGRAM
-// ============================================
 
 function nextPartThree() {
 
     document.body.innerHTML = `
+        <main class="container">
 
-        <div class="story">
+            <div class="heart">📱</div>
 
-            <div class="story-heart">
-                📱
-            </div>
-
-            <p class="story-label">
+            <p class="small-text">
                 PARTE 3
             </p>
 
             <h1>
-                Até que aconteceu...
+                Até que você me encontrou
             </h1>
 
-            <p>
-
-                Já no 7º ano, depois de tantos anos,
-                você encontrou meu Instagram.
-
-                A gente começou a conversar
-                novamente.
-
-                E foi aí que tudo começou de novo.
-
+            <p class="message">
+                Já no 7º ano, você encontrou meu
+                Instagram. A gente começou a
+                conversar novamente.
             </p>
 
             <button onclick="nextPartFour()">
                 Continuar ❤️
             </button>
 
-        </div>
-
+        </main>
     `;
 }
-
-
-// ============================================
-// AMIZADE
-// ============================================
 
 function nextPartFour() {
 
     document.body.innerHTML = `
+        <main class="container">
 
-        <div class="story">
+            <div class="heart">💬</div>
 
-            <div class="story-heart">
-                💬
-            </div>
-
-            <p class="story-label">
+            <p class="small-text">
                 PARTE 4
             </p>
 
@@ -299,89 +205,57 @@ function nextPartFour() {
                 Era para ser só amizade...
             </h1>
 
-            <p>
-
-                No começo, nós dois queríamos
-                ser apenas amigos.
-
-                Conversar, rir e colocar o papo
-                em dia depois de tantos anos.
-
-                Só que o coração tinha outros planos.
-
+            <p class="message">
+                Nós dois queríamos ser apenas amigos.
+                Só conversar, rir e matar a saudade.
+                Mas o coração tinha outros planos.
             </p>
 
             <button onclick="nextPartFive()">
                 Continuar ❤️
             </button>
 
-        </div>
-
+        </main>
     `;
 }
-
-
-// ============================================
-// O AMOR
-// ============================================
 
 function nextPartFive() {
 
     document.body.innerHTML = `
+        <main class="container">
 
-        <div class="story">
+            <div class="heart">❤️</div>
 
-            <div class="story-heart">
-                ❤️
-            </div>
-
-            <p class="story-label">
+            <p class="small-text">
                 PARTE 5
             </p>
 
             <h1>
-                A gente não conseguiu
+                O amor falou mais alto
             </h1>
 
-            <p>
-
-                O sentimento era grande demais.
-
-                A gente tentou deixar tudo
-                apenas como amizade...
-
-                mas não aguentamos.
-
-                O amor que existia entre nós
-                falou mais alto.
-
+            <p class="message">
+                A gente tentou ser só amigo e amiga,
+                mas o sentimento era grande demais.
+                A gente simplesmente não aguentou.
             </p>
 
             <button onclick="nextPartSix()">
                 Continuar ❤️
             </button>
 
-        </div>
-
+        </main>
     `;
 }
-
-
-// ============================================
-// FINAL
-// ============================================
 
 function nextPartSix() {
 
     document.body.innerHTML = `
+        <main class="container">
 
-        <div class="story final-story">
+            <div class="heart">💖</div>
 
-            <div class="story-heart">
-                💖
-            </div>
-
-            <p class="story-label">
+            <p class="small-text">
                 07 DE AGOSTO DE 2026 • 18:30
             </p>
 
@@ -389,43 +263,31 @@ function nextPartSix() {
                 E aqui estamos nós.
             </h1>
 
-            <p>
-
-                Depois de tantos anos,
-                a gente se encontrou novamente.
+            <p class="message">
+                Depois de tantos anos, a gente se
+                encontrou novamente.
 
                 E dessa vez não foi para ser
                 apenas amigos.
 
-                Dessa vez, a gente escolheu
-                ficar juntos.
-
+                Dessa vez, a gente escolheu ficar juntos.
             </p>
 
-            <p class="final-line">
-
+            <p class="wait">
                 De todas as histórias que poderiam
                 ter acontecido...
 
                 eu gosto mais da nossa. ❤️
-
             </p>
 
             <h2>
                 Feliz aniversário, minha princesa. 🎂❤️
             </h2>
 
-        </div>
-
+        </main>
     `;
 }
-
-
-// ============================================
-// INICIAR
-// ============================================
 
 updateCountdown();
 
 setInterval(updateCountdown, 1000);
-```
