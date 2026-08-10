@@ -1,8 +1,17 @@
-const targetDate = new Date(
-    "2026-08-10T16:40:00-03:00"
-).getTime();
+// ==========================================
+// TESTE — 10/08/2026 às 16:40 em BRASÍLIA
+// ==========================================
+
+// 16:40 de Brasília (UTC-3) = 19:40 UTC
+const targetDate = Date.UTC(2026, 7, 10, 19, 40, 0);
+
+
+// ==========================================
+// CONTADOR
+// ==========================================
 
 function updateCountdown() {
+
     const now = Date.now();
     const difference = targetDate - now;
 
@@ -40,7 +49,13 @@ function updateCountdown() {
         String(seconds).padStart(2, "0");
 }
 
+
+// ==========================================
+// DESBLOQUEAR
+// ==========================================
+
 function unlockSite() {
+
     document.body.innerHTML = `
         <main class="container">
 
@@ -67,7 +82,13 @@ function unlockSite() {
     `;
 }
 
+
+// ==========================================
+// HISTÓRIA
+// ==========================================
+
 function openStory() {
+
     document.body.innerHTML = `
         <main class="container">
 
@@ -95,15 +116,21 @@ function openStory() {
     `;
 }
 
+
 function nextPart() {
+
     document.body.innerHTML = `
         <main class="container">
 
             <div class="heart">🌱</div>
 
-            <p class="small-text">PARTE 1</p>
+            <p class="small-text">
+                PARTE 1
+            </p>
 
-            <h1>A creche</h1>
+            <h1>
+                A creche
+            </h1>
 
             <p class="message">
                 Foi lá que a gente se conheceu.
@@ -120,15 +147,21 @@ function nextPart() {
     `;
 }
 
+
 function nextPartTwo() {
+
     document.body.innerHTML = `
         <main class="container">
 
             <div class="heart">⏳</div>
 
-            <p class="small-text">PARTE 2</p>
+            <p class="small-text">
+                PARTE 2
+            </p>
 
-            <h1>O tempo passou</h1>
+            <h1>
+                O tempo passou
+            </h1>
 
             <p class="message">
                 No primeiro ano eu mudei de escola.
@@ -144,15 +177,21 @@ function nextPartTwo() {
     `;
 }
 
+
 function nextPartThree() {
+
     document.body.innerHTML = `
         <main class="container">
 
             <div class="heart">📱</div>
 
-            <p class="small-text">PARTE 3</p>
+            <p class="small-text">
+                PARTE 3
+            </p>
 
-            <h1>Até que você me encontrou</h1>
+            <h1>
+                Até que você me encontrou
+            </h1>
 
             <p class="message">
                 Já no 7º ano, você encontrou meu
@@ -168,15 +207,21 @@ function nextPartThree() {
     `;
 }
 
+
 function nextPartFour() {
+
     document.body.innerHTML = `
         <main class="container">
 
             <div class="heart">💬</div>
 
-            <p class="small-text">PARTE 4</p>
+            <p class="small-text">
+                PARTE 4
+            </p>
 
-            <h1>Era para ser só amizade...</h1>
+            <h1>
+                Era para ser só amizade...
+            </h1>
 
             <p class="message">
                 Nós dois queríamos ser apenas amigos.
@@ -192,15 +237,21 @@ function nextPartFour() {
     `;
 }
 
+
 function nextPartFive() {
+
     document.body.innerHTML = `
         <main class="container">
 
             <div class="heart">❤️</div>
 
-            <p class="small-text">PARTE 5</p>
+            <p class="small-text">
+                PARTE 5
+            </p>
 
-            <h1>O amor falou mais alto</h1>
+            <h1>
+                O amor falou mais alto
+            </h1>
 
             <p class="message">
                 A gente tentou ser só amigo e amiga,
@@ -216,7 +267,9 @@ function nextPartFive() {
     `;
 }
 
+
 function nextPartSix() {
+
     document.body.innerHTML = `
         <main class="container">
 
@@ -255,5 +308,11 @@ function nextPartSix() {
     `;
 }
 
+
+// ==========================================
+// INICIAR
+// ==========================================
+
 updateCountdown();
+
 setInterval(updateCountdown, 1000);
